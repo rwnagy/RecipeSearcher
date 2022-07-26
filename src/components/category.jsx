@@ -64,6 +64,14 @@ const SLink = styled(NavLink)`
             color: white;
         }
     }
+    @media only screen and (max-width: 640px) {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.5rem;
+    h4{
+        color: white;
+        font-size: 0.6rem;
+    }
 `
 
 export default Category;

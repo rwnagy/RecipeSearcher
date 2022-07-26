@@ -37,12 +37,17 @@ function Vegan(){
                             arrows: false,
                             pagination: false,
                             drag: "free",
-                            gap: "5rem",
+                            gap: "2rem",
+                            breakpoints: {
+                                640: {
+                                    perPage: 2,
+                                },
+                          }
                         }}>
                         {vegan.map((recipe) => {
                             return (
                                 <SplideSlide key={recipe.id} >
-                                <Card>
+                                <Card  key={recipe.id}>
                                     <Link to={'/recipe/' + recipe.id}>
                                     <p>{recipe.title}</p>
                                     <img src={recipe.image} alt={recipe.title} />
@@ -63,11 +68,10 @@ margin: 4rem 0rem;
 `;
 
 const Card = styled.div`
-    min-height: 25rem;
+    min-height: 15rem;
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
-
     img{
         border-radius: 2rem;
         position: absolute;
@@ -92,6 +96,12 @@ const Card = styled.div`
         justify-content: center;
         align-items: center;
     }
+    @media only screen and (max-width: 640px) {
+    min-height: 10rem;
+    min-width: 10rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
 `;
 
 const Gradient = styled.div`
